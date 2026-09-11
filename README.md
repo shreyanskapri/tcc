@@ -23,7 +23,7 @@ Change this in `js/admin.js` before sharing the site.
 - Upcoming/past events
 - Admin event creation/deletion
 - Student registration
-- Student ID validation for `SC26-1234` / `MG26-1234`
+- Student ID validation
 - Trinity email validation
 - Magazine PDF uploads
 - Executive board photo/name/position/introduction uploads
