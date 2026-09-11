@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCC Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-page">
+  <header class="header">
+    <a class="brand" href="index.html"><span class="brand-icon">&lt;/&gt;</span><span><strong>TRINITY</strong><small>COMPUTER COUNCIL</small></span></a>
+    <a class="btn outline" href="index.html">View website ↗</a>
+  </header>
+
+  <main class="admin-main">
+    <section id="loginPanel" class="login-panel">
+      <p class="eyebrow"><span></span> PRIVATE AREA</p>
+      <h1>Admin <em>dashboard.</em></h1>
+      <p>Manage events, magazines, executive members and registrations.</p>
+      <form id="loginForm" class="admin-form">
+        <label>Username<input name="username" value="admin" required></label>
+        <label>Password<input name="password" type="password" required></label>
+        <button class="btn primary" type="submit">Sign in →</button>
+        <p id="loginMessage" class="form-message"></p>
+      </form>
+      <small class="demo-note">Demo-only frontend authentication. See README before public deployment.</small>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <div class="dashboard-heading">
+        <div><p class="eyebrow"><span></span> CONTROL CENTER</p><h1>Welcome, <em>admin.</em></h1></div>
+        <button class="btn outline" id="logoutButton">Log out</button>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-panel="eventsPanel">Events</button>
+        <button class="tab" data-panel="magazinePanel">Magazine</button>
+        <button class="tab" data-panel="teamPanel">Team</button>
+        <button class="tab" data-panel="registrationsPanel">Registrations</button>
+      </div>
+
+      <section id="eventsPanel" class="tab-panel">
+        <div class="admin-layout">
+          <form id="eventForm" class="panel form-card">
+            <h3>Add event</h3>
+            <label>Title<input name="title" required></label>
+            <label>Description<textarea name="description" rows="4" required></textarea></label>
+            <div class="two-cols"><label>Date<input type="date" name="date" required></label><label>Time<input type="time" name="time" required></label></div>
+            <label>Venue<input name="venue" required></label>
+            <label>Status<select name="status"><option value="upcoming">Upcoming</option><option value="past">Past</option></select></label>
+            <label>Cover image<input type="file" name="image" accept="image/*"></label>
+            <button class="btn primary" type="submit">Publish event →</button>
+            <p class="form-message" id="eventMessage"></p>
+          </form>
+          <div class="panel"><h3>Published events</h3><div id="adminEvents"></div></div>
+        </div>
+      </section>
+
+      <section id="magazinePanel" class="tab-panel hidden">
+        <div class="admin-layout">
+          <form id="magazineForm" class="panel form-card">
+            <h3>Upload magazine</h3>
+            <label>Title<input name="title" required></label>
+            <label>Description<textarea name="description" rows="4"></textarea></label>
+            <label>PDF file<input type="file" name="file" accept="application/pdf" required></label>
+            <button class="btn primary" type="submit">Upload PDF →</button>
+            <p class="form-message" id="magazineMessage"></p>
+          </form>
+          <div class="panel"><h3>Magazine archive</h3><div id="adminMagazines"></div></div>
+        </div>
+      </section>
+
+      <section id="teamPanel" class="tab-panel hidden">
+        <div class="admin-layout">
+          <form id="teamForm" class="panel form-card">
+            <h3>Add executive member</h3>
+            <label>Name<input name="name" required></label>
+            <label>Position<input name="position" required placeholder="President"></label>
+            <label>Brief introduction<textarea name="introduction" rows="5" required></textarea></label>
+            <label>Photo<input type="file" name="photo" accept="image/*" required></label>
+            <button class="btn primary" type="submit">Add member →</button>
+            <p class="form-message" id="teamMessage"></p>
+          </form>
+          <div class="panel"><h3>Executive board</h3><div id="adminTeam"></div></div>
+        </div>
+      </section>
+
+      <section id="registrationsPanel" class="tab-panel hidden">
+        <div class="panel">
+          <div class="panel-top"><h3>Event registrations</h3><button class="btn outline" id="exportRegistrations">Export CSV</button></div>
+          <div class="table-scroll"><table><thead><tr><th>Event</th><th>Name</th><th>ID</th><th>Email</th><th>Class</th><th>Section</th><th>Stream</th><th>Shift</th></tr></thead><tbody id="registrationsBody"></tbody></table></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>
