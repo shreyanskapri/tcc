@@ -19,7 +19,7 @@ $("#loginForm").addEventListener("submit",e=>{
   e.preventDefault();
   const vals=Object.fromEntries(new FormData(e.currentTarget));
   if(vals.username==="admin"&&vals.password==="tcc2026"){sessionStorage.setItem(AUTH,"1");showDashboard()}
-  else $("#loginMessage").textContent="Invalid credentials. Demo password: tcc2026";
+  else $("#loginMessage").textContent="Invalid credentials.";
 });
 $("#logoutButton").addEventListener("click",()=>{sessionStorage.removeItem(AUTH);showDashboard()});
 
