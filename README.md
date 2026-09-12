@@ -9,13 +9,6 @@ Open `index.html` directly in a browser, or use VS Code Live Server.
 Admin dashboard:
 `admin.html`
 
-## Demo admin login
-
-- Username: `admin`
-- Password: `tcc2026`
-
-Change this in `js/admin.js` before sharing the site.
-
 ## Included
 
 - Responsive animated homepage
