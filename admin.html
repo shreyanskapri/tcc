@@ -22,17 +22,17 @@
       <h1>Admin <em>dashboard.</em></h1>
       <p>Manage events, magazines, executive members and registrations.</p>
       <form id="loginForm" class="admin-form">
-        <label>Username<input name="username" value="admin" required></label>
-        <label>Password<input name="password" type="password" required></label>
+        <label>Email<input name="email" type="email" autocomplete="username" placeholder="admin@trinity.edu.np" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
         <button class="btn primary" type="submit">Sign in →</button>
         <p id="loginMessage" class="form-message"></p>
       </form>
-      <small class="demo-note">Demo-only frontend authentication. See README before public deployment.</small>
+      <small class="demo-note">Sign in with the Supabase Auth account created for your council administrator.</small>
     </section>
 
     <section id="dashboard" class="dashboard hidden">
       <div class="dashboard-heading">
-        <div><p class="eyebrow"><span></span> CONTROL CENTER</p><h1>Welcome, <em>admin.</em></h1></div>
+        <div><p class="eyebrow"><span></span> CONTROL CENTER</p><h1>Welcome, <em>admin.</em></h1><small id="adminEmail"></small></div>
         <button class="btn outline" id="logoutButton">Log out</button>
       </div>
 
@@ -97,6 +97,8 @@
       </section>
     </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
   <script src="js/admin.js"></script>
 </body>
 </html>
